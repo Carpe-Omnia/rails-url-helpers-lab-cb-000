@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     @student = Student.find_by(id: params[:id])
     @student.active == false ? @student.active = true : @student.active = false
     @student.save
-    redirect_to
+    redirect_to :action => "show", :id => @student.id
   end
 
   private
